@@ -26,12 +26,11 @@ body {
   height: 400px;
   position: relative;
   perspective: 2000px;
-  /* Optional: add some pink border */
   border: 6px solid #ec407a;
   border-radius: 12px;
 }
 
-/* Todas las páginas tienen esta base para rotar */
+/* Página base */
 .page {
   width: 100%;
   height: 100%;
@@ -54,14 +53,14 @@ body {
   z-index: 1;
 }
 
-/* Cuando está volteada */
+/* Página girada */
 .page.flipped {
   transform: rotateY(-180deg);
   z-index: 0 !important;
-  pointer-events: none; /* Para que no se pueda clicar cuando está atrás */
+  pointer-events: none;
 }
 
-/* Portada con fondo rosa y texto blanco */
+/* Portada */
 .page.cover {
   background: pink;
   color: white;
@@ -72,6 +71,7 @@ body {
 
 .page.cover h1 {
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .page.cover img {
@@ -86,10 +86,21 @@ body {
 .page.cover p {
   font-style: italic;
   font-size: 1.2rem;
+  text-align: center;
 }
 
+/* Botones */
 .controls {
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.music-control {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -97,7 +108,7 @@ button {
   border: none;
   color: white;
   padding: 10px 20px;
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 6px;
@@ -108,46 +119,8 @@ button:hover {
   background-color: #d81b60;
 }
 
-/* Estilos base (los que ya tienes) */
-
-/* ... (tu CSS actual aquí) ... */
-
-/* Media query para pantallas pequeñas (celulares) */
+/* Responsive para celulares */
 @media (max-width: 650px) {
-  .book {
-    width: 90vw;  /* Ancho casi completo del viewport */
-    height: 60vw; /* Mantiene proporción para el libro */
-  }
-
-  .page, .page .front, .page .back {
-    font-size: 1rem; /* Texto un poco más pequeño */
-    padding: 20px;
-  }
-
-  .page.cover .front {
-    font-size: 1.5rem;
-    padding: 15px;
-  }
-
-  button {
-    padding: 8px 15px;
-    font-size: 14px;
-    margin: 0 3px;
-  }
-
-  .controls, .music-control {
-    margin-top: 15px;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .controls button, .music-control button {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    display: block;
-  }
-}
   .book {
     width: 90vw;
     height: 60vw;
@@ -155,8 +128,8 @@ button:hover {
 
   .page, .page.cover {
     overflow: hidden;
-    box-sizing: border-box;
     padding: 15px 20px;
+    font-size: 1rem;
     height: 100%;
   }
 
@@ -166,31 +139,38 @@ button:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 15px;
   }
 
   .page.cover h1 {
     font-size: 1.6rem;
-    margin-bottom: 12px;
-    word-break: break-word; /* Para evitar que el texto salga del contenedor */
+    margin-bottom: 10px;
+    word-break: break-word;
   }
 
   .page.cover img {
     max-width: 100%;
-    max-height: 35%;
+    max-height: 120px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .page.cover p {
     font-size: 1rem;
     font-style: italic;
-    margin-top: 0;
+    margin: 0;
   }
 
   .controls, .music-control {
-    margin-top: 10px;
-    z-index: 1000; /* Para que siempre estén visibles */
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
   }
 
+  .controls button, .music-control button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 
