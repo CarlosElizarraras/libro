@@ -148,3 +148,35 @@ button:hover {
     display: block;
   }
 }
+
+@media (max-width: 650px) {
+  /* Ajustes para el libro y páginas, ya los tienes */
+  
+  /* Ajustes específicos para portada */
+  .page.cover {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page.cover h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .page.cover img {
+    width: 120px;  /* Reduce el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .page.cover p {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 0;
+  }
+}
+
