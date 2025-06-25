@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo lo bueno de ti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <iframe style="display:none;" width="0" height="0"
+    src="https://youtu.be/i9UDD6zyCGs?si=XQiIkdYBkFRm9L3x">
+  </iframe>
+
+  <div class="book-container">
+    <div class="book" id="book">
+      <!-- Las páginas se agregarán por JavaScript -->
+    </div>
+
+<div class="music-control">
+  <button id="btnMusica">▶️ Reproducir música</button>
+  <audio id="musicaFondo" src="musica.mp3" loop></audio>
+
+</div>
+
+<div class="controls">
+  <button onclick="prevPage()">← Atrás</button>
+  <button onclick="nextPage()">Siguiente →</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
