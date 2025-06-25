@@ -116,10 +116,6 @@ portada.innerHTML = `
     <h1>Todo lo bueno de ti</h1>
     <img src="kitty.png" alt="Hello Kitty">
   </div>
-  <div class="back">
-    <h2>¡Bienvenida!</h2>
-    <p>Espero que disfrutes este pequeño libro lleno de cariño.</p>
-  </div>
 `;
 portada.style.zIndex = frases.length + 3;
 book.appendChild(portada);
