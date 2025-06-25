@@ -148,13 +148,19 @@ button:hover {
     display: block;
   }
 }
+  .book {
+    width: 90vw;
+    height: 60vw;
+  }
 
-@media (max-width: 650px) {
-  /* Ajustes para el libro y páginas, ya los tienes */
-  
-  /* Ajustes específicos para portada */
+  .page, .page.cover {
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    height: 100%;
+  }
+
   .page.cover {
-    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,14 +169,16 @@ button:hover {
   }
 
   .page.cover h1 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    word-break: break-word; /* Para evitar que el texto salga del contenedor */
   }
 
   .page.cover img {
-    width: 120px;  /* Reduce el tamaño de la imagen */
-    height: auto;
-    margin-bottom: 15px;
+    max-width: 100%;
+    max-height: 35%;
+    object-fit: contain;
+    margin-bottom: 12px;
   }
 
   .page.cover p {
@@ -178,5 +186,11 @@ button:hover {
     font-style: italic;
     margin-top: 0;
   }
-}
+
+  .controls, .music-control {
+    margin-top: 10px;
+    z-index: 1000; /* Para que siempre estén visibles */
+    position: relative;
+  }
+
 
